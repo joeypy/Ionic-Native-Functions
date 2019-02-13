@@ -18,15 +18,17 @@
     </ion-item>
   </ion-list>
 
-  <button ion-button block (click)="getPhotoFromCamera()">Open Gallery</button>
-  <button ion-button block (click)="scanQR()">Scan QR</button>
-  <button ion-button block (click)="encodeToQR()">Encode QR</button>
+  <button ion-button block icon-left (click)="getPhotoFromCamera()"><ion-icon name="camera"></ion-icon>Open Camera</button>
+  <button ion-button block icon-left (click)="getPhotoFromGallery()"><ion-icon name="images"></ion-icon>Open Gallery</button>
+  <button ion-button block icon-left (click)="scanQR()"><ion-icon name="qr-scanner"></ion-icon>Scan QR</button>
+  <button ion-button block icon-left (click)="encodeToQR()"><ion-icon name="barcode"></ion-icon>Encode QR</button>
   
-  <img src="{{base64Image}}"/>
-  <div *ngIf="scannedData.text">
-    <label>Your barcode QR says:</label>
-    <br>
-    <h3>{{scannedData.text}}</h3>
-  </div>
+    <img src="{{base64Image}}"/>
+    <div *ngIf="scannedData.text">
+      <label>Your barcode QR says:</label>
+      <br>
+      <h3>{{scannedData.text}}</h3>
+    </div>
+  
   
 </ion-content>
