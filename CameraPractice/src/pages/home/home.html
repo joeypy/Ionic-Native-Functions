@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Lista de funciones Nativas Ionic</h3>
+  <!--<button ion-button block menuToggle>Toggle Menu</button>-->
+  
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Encode to QR</ion-label>
+      <ion-input type="text" [(ngModel)]="encodeText"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="getPhotoFromCamera()">Open Gallery</button>
+  <button ion-button block (click)="scanQR()">Scan QR</button>
+  <button ion-button block (click)="encodeToQR()">Encode QR</button>
+  
+  <img src="{{base64Image}}"/>
+  <div *ngIf="scannedData.text">
+    <label>Your barcode QR says:</label>
+    <br>
+    <h3>{{scannedData.text}}</h3>
+  </div>
+  
+</ion-content>
